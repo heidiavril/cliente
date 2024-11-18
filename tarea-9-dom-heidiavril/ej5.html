@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Ejercicio 5: Crear elementos dinámicamente
+    Enunciado:
+    - Crea un botón "Añadir elemento".
+    - Cada vez que se haga clic en el botón, añade un nuevo elemento <li> con un número secuencial a una lista desordenada (<ul>).
+    - Incluir un botón "Reset" que elimine la lista -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 5</title>
+  <style>
+    /* Configuración del contenedor principal */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f9;
+      padding: 20px;
+    }
+
+    /* Estilo de la columna de botones */
+    .botones {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Estilo de los botones */
+    .boton {
+      padding: 12px 20px;
+      font-size: 1em;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Arial', sans-serif;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilo específico para el botón de reset */
+    #reset {
+      display: none;
+      background-color: #dc3545;
+    }
+
+    #reset:hover {
+      background-color: #a71d2a;
+    }
+
+    /* Estilo de la lista */
+    #lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Estilo de los elementos de lista */
+    #lista li {
+      font-size: 1.2em;
+      font-family: 'Georgia', serif;
+      color: #333;
+      background-color: #e9ecef;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Columna de botones -->
+  <div class="botones">
+    <button id="agregar" class="boton" onclick="addli()">Añadir elemento</button>
+    <button id="reset" class="boton" onclick="reseteo()">Reset</button>
+  </div>
+
+  <!-- Lista dinámica -->
+  <ul id="lista"></ul>
+
+  <script>
+    let lista = document.getElementById("lista");
+    const botonR = document.getElementById("reset");
+
+    function addli() {
+      const nuevoLi = document.createElement("li");
+      nuevoLi.textContent = "Nuevo objeto";
+      lista.appendChild(nuevoLi);
+
+      botonR.style.display = "block";
+    }
+
+    function reseteo() {
+      while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+      }
+
+      botonR.style.display = "none";
+    }
+  </script>
+</body>
+</html>

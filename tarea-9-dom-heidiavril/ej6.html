@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Ejercicio 6: Cambiar la imagen al pasar el ratón
+    Enunciado:
+    - Añade dos archivos de imagen diferentes.
+    - Al pasar el ratón por encima de la imagen, cambia a la segunda imagen.
+    - Al retirar el ratón, vuelve a la imagen original. -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 6</title>
+  <style>
+    /* Configuración del contenedor principal */
+    <style>
+        /* Configuración del contenedor principal */
+        body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #f7f7f9;
+        }
+    
+        /* Estilo del contenedor de la imagen */
+        #contenedor-imagen {
+          text-align: center;
+          margin: 0 auto; /* Centra el contenedor */
+          width: 80%;
+          max-width: 600px;
+        }
+    
+        /* Estilo de la imagen */
+        #imagen {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease-in-out;
+        }
+    
+        /* Estilo del mensaje */
+        #mensaje {
+          font-size: 1.2em;
+          color: #333;
+          font-family: 'Georgia', serif;
+          text-align: center;
+          margin: 0 auto;
+          max-width: 80%;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="mensaje">
+        <h1>Pasa el ratón sobre la imagen para cambiarla</h1>
+      </div>
+      
+      <div id="contenedor-imagen">
+        <img id="imagen" src="https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc" alt="Imagen ejemplo">
+        <!-- <img id="imagen" src="https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1" alt="Nueva imagen"> -->
+      </div>
+    
+      <script>
+        const foto = document.getElementById("imagen"); // coge el src
+      
+        const original = "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc";
+        const nueva = "https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1";
+      
+        foto.addEventListener("mouseenter", () => { // cuando pongo el ratón
+          foto.src = nueva;
+        });
+
+        foto.addEventListener("mouseleave", () => { // cuando quito el ratón
+          foto.src = original;
+        });
+      </script>
+    </body>
+    </html>

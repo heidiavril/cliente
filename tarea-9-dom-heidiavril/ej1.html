@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Ejercicio 1: Cambiar Texto de un Elemento
+    Enunciado: Usa JavaScript para seleccionar el encabezado y
+    cambia su texto a "Título cambiado por JavaScript".
+    -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1</title>
+  <style>
+    /* Estilo básico para los botones */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px; /* Espacio entre botones */
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">Título original</h1>
+  <button id="cambiarTitulo" onclick="cambiarTexto()">Cambiar Título</button>
+  <button id="restaurarTitulo" onclick="restaurarTexto()">Restaurar Título</button>
+
+  <script>
+    function cambiarTexto() {
+      const cambio = document.getElementById("titulo");
+      cambio.textContent = "Título cambiado por JavaScript";
+    }
+
+    function restaurarTexto() {
+      const restauro = document.getElementById("titulo");
+      restauro.textContent = "Título original";
+    }
+  </script>
+</body>
+</html>

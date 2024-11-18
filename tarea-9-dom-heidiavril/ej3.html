@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Ejercicio 3: Contador de Clicks
+    Enunciado:
+
+    - Crea un botón con el texto "Haz clic aquí".
+    - Cada vez que se haga clic en el botón, actualiza un contador que muestre el número total de clics.
+    - Incluir un botón "Reset" que ponga el contador a cero. -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3</title>
+  <style>
+    /* Configuración del contenedor */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f9;
+    }
+
+    /* Estilo del contador */
+    #contador {
+      font-size: 2em;
+      font-family: 'Georgia', serif;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo de los botones */
+    .boton {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Arial', sans-serif;
+      transition: background-color 0.3s ease;
+      margin: 5px; /* Separación entre botones */
+    }
+
+    .boton:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilo específico para el botón de reset */
+    #reset {
+      background-color: #dc3545;
+    }
+
+    #reset:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <p id="contador">Clicks: 0</p>
+  <button id="incrementar" class="boton" onclick="contarClicks()">Haz clic aquí</button>
+  <button id="reset" class="boton" onclick="reseteo()">Reset</button>
+
+  <script>
+    let truecont = 0;
+
+    function contarClicks() {
+      truecont++;
+      let contador = document.getElementById("contador");
+      contador.textContent = "Clicks: " + truecont;
+    }
+
+    function reseteo() {
+      let contador = document.getElementById("contador");
+      contador.textContent = "Clicks: 0";
+    }
+  </script>
+</body>
+</html>

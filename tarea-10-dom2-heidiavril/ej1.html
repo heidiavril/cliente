@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Ejercicio 1: Galería de Imágenes Dinámica
+Enunciado: Crea una galería de imágenes con miniaturas que, al hacer clic, muestren la imagen en tamaño completo. Al hacer clic en la imagen
+grande, debe cerrarse. Usa una fuente moderna y asegúrate de que la galería se adapte a diferentes tamaños de pantalla. -->
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 1</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				background-color: #f4f4f9;
+			}
+			.gallery {
+				display: flex;
+				gap: 10px;
+				flex-wrap: wrap;
+				max-width: 600px;
+			}
+			.thumbnail {
+				width: 100px;
+				cursor: pointer;
+			}
+			#full-image {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background: rgba(0, 0, 0, 0.8);
+				display: none;
+				justify-content: center;
+				align-items: center;
+			}
+			#full-image img {
+				max-width: 90vw;
+				max-height: 90vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="gallery">
+			<img
+				src="https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc"
+				alt="Imagen 1"
+				class="thumbnail"
+			/>
+			<img
+				src="https://plus.unsplash.com/premium_photo-1661963874418-df1110ee39c1"
+				alt="Imagen 2"
+				class="thumbnail"
+			/>
+			<img
+				src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+				alt="Imagen 3"
+				class="thumbnail"
+			/>
+		</div>
+		<div id="full-image">
+			<img src="" alt="Imagen grande" />
+		</div>
+		<script>
+			const imgsPequeñas = document.querySelectorAll(".thumbnail"); // selecciona todos los elementos con clase "thumbnail" y hace como un array con ellos
+			const divImgGrande = document.getElementById("full-image"); // selecciona el CONTENIDO div
+			const imgGrande = divImgGrande.querySelector("img"); // selecciona el valor del src del img contenido en el div (divImgGrande)
+
+			imgsPequeñas.forEach((thumbnail) => { // recorro el array de thumbnails
+				thumbnail.addEventListener("click", () => { // por cada objeto thumbnail
+					imgGrande.src = thumbnail.src; // le doy a img la src de ese thumbnail
+					divImgGrande.style.display = "flex"; // muestro el div grande, de forma que bloqueo los otros (pero porque está fixed)
+				});
+			});
+
+			divImgGrande.addEventListener("click", () => { // al hacer click en el div
+				divImgGrande.style.display = "none"; // cambio display a none
+			});
+		</script>
+	</body>
+</html>

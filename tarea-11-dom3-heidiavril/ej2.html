@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+        <!-- Ejercicio 2: Números felices y números tristes
+        
+        Descripción: Los números felices se definen por el siguiente procedimiento: empezando con cualquier número entero positivo, se reemplaza el número por la suma de los cuadrados de sus dígitos, y se repite el proceso hasta que el número es igual a 1 o hasta que se entra en un bucle que no incluye el 1.1​ Los números que al finalizar el proceso terminan con 1 son conocidos como números felices. Aquellos que no, son conocidos como números infelices (o tristes).
+
+        Requisitos:
+
+        - Implementar una función que evalue "la felicidad" del número (o su "infelicidad")
+        - Permitir al usuario obtener el resultado sin usar el raton, usando la tecja ENTER
+        -->
+
+<html lang="es">
+            
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #e9ecef;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>La felicidad de los números</h1>
+    <input type="number" id="inputNumber" placeholder="Ingresa un número entero positivo" aria-label="Número para verificar si es feliz">
+    <button id="checkButton">¿Feliz o Triste?</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    
+    // Tu código Javascript
+
+  </script>
+</body>
+</html>
+
+<!-- Números felices de dos cifras: 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94 y 97 -->

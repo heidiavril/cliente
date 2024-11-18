@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+Ejercicio: Generador de Tablero
+
+Descripción: Crea un generador de tablero, donde el usuario puede ingresar el tamaño del tablero 
+(de 2x2 a 10x10) que genera un tablero con colores alternos.
+
+Requisitos:
+- El tamaño debe estar entre 2 y 10 (inclusive).
+- El tablero debe generar colores alternos en las celdas.
+-->
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .board {
+      display: grid;
+      margin-top: 1rem;
+      gap: 2px;
+    }
+
+    .cell {
+      width: 40px;
+      height: 40px;
+    }
+
+    .cell.green {
+      background: #4CAF50;  /* Verde */
+    }
+
+    .cell.brown {
+      background: #8B4513;  /* Marrón */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tablero de Ajedrez</h1>
+    <input type="number" id="boardSize" placeholder="Tamaño del tablero (ej. 8)" min="2" max="10" aria-label="Tamaño del tablero">
+    <button id="generateButton">Generar Tablero</button>
+    <div id="board" class="board"></div>
+  </div>
+
+  <script>
+    
+    // Tu código Javascript
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Ejercicio 4: Formulario de Encuesta Dinámico
+Enunciado: Crea un formulario de encuesta con una lista de preguntas que aparezcan una a la vez. Al hacer clic en "Siguiente", muestra la siguiente pregunta. Al final de la encuesta, muestra un mensaje de "Gracias por participar". -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+        }
+
+        .survey {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="survey">
+        <div id="question" class="question">¿Cuál es tu color favorito?</div>
+        <button id="nextBtn" class="btn">Siguiente</button>
+    </div>
+    <script>
+        
+        // Tu código Javascript
+
+    </script>
+</body>
+
+</html>
